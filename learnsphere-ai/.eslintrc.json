@@ -1,0 +1,13 @@
+{
+  "extends": ["next/core-web-vitals", "@next/eslint-plugin-next"],
+  "rules": {
+    "semi": ["error", "always"],
+    "semi-spacing": ["error", { "before": false, "after": true }],
+    "@typescript-eslint/semi": ["error", "always"],
+    "@typescript-eslint/no-explicit-any": "error"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  }
+}
