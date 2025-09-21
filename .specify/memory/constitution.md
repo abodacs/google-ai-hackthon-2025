@@ -1,50 +1,73 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+Version change: initial → 1.0.0
+Modified principles:
+- Added: I. Code Quality Standards
+- Added: II. Testing Requirements
+- Added: III. User Experience Consistency
+- Added: IV. Performance Standards
+- Added: V. Documentation & Maintainability
+Added sections:
+- Quality Gates
+- Development Workflow
+Removed sections: None
+Templates requiring updates:
+✅ .specify/templates/plan-template.md (constitution reference updated)
+✅ .specify/templates/spec-template.md (requirements alignment confirmed)
+Follow-up TODOs: None
+-->
+
+# Google AI Hackathon 2025 Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Code Quality Standards
+All code MUST adhere to industry best practices with zero tolerance for technical debt accumulation. Static analysis tools MUST pass without warnings. Code reviews are mandatory for all changes with focus on readability, maintainability, and adherence to established patterns. Linting and formatting rules are non-negotiable and enforced via pre-commit hooks.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+*Rationale: High-quality code reduces debugging time, improves collaboration, and ensures project sustainability throughout the hackathon timeline.*
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### II. Testing Requirements (NON-NEGOTIABLE)
+Test-Driven Development is mandatory: Tests written → User approved → Tests fail → Then implement. Minimum 80% code coverage required for all features. Unit tests for all business logic, integration tests for API contracts, and end-to-end tests for critical user flows. Red-Green-Refactor cycle strictly enforced.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+*Rationale: Comprehensive testing ensures feature reliability and prevents regressions, critical for hackathon success where rapid iteration is essential.*
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### III. User Experience Consistency
+All user interfaces MUST follow a unified design system with consistent interaction patterns, visual hierarchy, and accessibility standards (WCAG 2.1 AA). User flows MUST be intuitive and require minimal learning curve. Cross-platform compatibility required where applicable.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+*Rationale: Consistent UX reduces user confusion and improves adoption rates, essential for hackathon judging and user feedback.*
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### IV. Performance Standards
+Response times MUST be under 200ms for API endpoints, under 100ms for UI interactions. Memory usage MUST stay within defined limits. Performance regression tests required for all optimization-sensitive features. Monitoring and alerting implemented for performance metrics.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+*Rationale: Performance directly impacts user satisfaction and system scalability, critical factors for hackathon evaluation.*
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### V. Documentation & Maintainability
+All APIs MUST have OpenAPI specifications. Code MUST be self-documenting with clear variable names and minimal comments. Architecture decisions MUST be documented in ADRs. Setup and deployment procedures MUST be automated and documented.
+
+*Rationale: Clear documentation enables rapid onboarding and reduces knowledge silos during intensive hackathon development.*
+
+## Quality Gates
+
+All features MUST pass the following gates before completion:
+- Static analysis passes without warnings
+- All tests pass with minimum 80% coverage
+- Performance benchmarks meet defined thresholds
+- Security scan passes without critical issues
+- Documentation is complete and accurate
+- UX review confirms consistency with design system
+
+Code deployment is blocked if any quality gate fails. No exceptions without explicit architectural justification documented in Complexity Tracking.
+
+## Development Workflow
+
+Code changes follow trunk-based development with feature flags for incomplete work. All commits MUST be atomic and follow conventional commit format. Pull requests require approval from at least one team member and automated CI checks must pass. Database migrations MUST be backward compatible and tested in staging environment.
+
+Continuous integration pipeline enforces all quality standards automatically. Manual quality gate bypasses require team consensus and documented justification.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution supersedes all other development practices and standards. Amendments require team consensus, documentation of impact, and migration plan for existing code. All code reviews and development decisions MUST verify constitutional compliance.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+Complexity that violates these principles MUST be justified with specific business need and simpler alternatives documented as rejected. Emergency exceptions require post-incident review and remediation plan.
+
+**Version**: 1.0.0 | **Ratified**: 2025-09-20 | **Last Amended**: 2025-09-20

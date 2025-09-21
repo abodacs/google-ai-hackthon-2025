@@ -1,0 +1,10 @@
+# Ignore everything by default
+*
+
+# But track these specific items
+!learnsphere-ai/
+!learnsphere-ai/**
+!docs/
+!docs/**
+!CLAUDE.md
+!.gitignore
