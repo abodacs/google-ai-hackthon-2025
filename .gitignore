@@ -6,5 +6,8 @@
 !learnsphere-ai/**
 !docs/
 !docs/**
-!CLAUDE.md
 !.gitignore
+!LICENSE
+
+# Local Netlify folder
+.netlify

@@ -1,0 +1,63 @@
+[build]
+  # Build command
+  command = "pnpm build"
+
+  # Directory to publish (Next.js output)
+  publish = "out"
+
+# Site configuration
+[site]
+  # Preferred subdomain (if available)
+  name = "learnsphere-ai"
+
+[build.environment]
+  # Node.js and package manager versions
+  NODE_VERSION = "22"
+  NPM_FLAGS = "--version"
+
+# Force pnpm instead of npm
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Headers for security and caching
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Security headers
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+    # Cache static assets
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Redirects for SPA
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Build optimization
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
