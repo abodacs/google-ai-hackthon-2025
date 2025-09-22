@@ -20,7 +20,7 @@ import {
   isTranslatorSupported,
   isLanguageDetectorSupported,
   isChromeAISupported,
-} from "@/types/chrome-ai";
+} from "@/features/ai-playground/types/chrome-ai";
 
 export class ChromeAIService {
   /**
