@@ -8,7 +8,7 @@
 # Site configuration
 [site]
   # Preferred subdomain (if available)
-  name = "learnsphere-ai"
+  name = "learnsphere-ai-2025"
 
 [build.environment]
   # Node.js and package manager versions

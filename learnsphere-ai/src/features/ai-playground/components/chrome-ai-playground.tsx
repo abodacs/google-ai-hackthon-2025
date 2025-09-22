@@ -14,15 +14,15 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { chromeAIService } from "@/services/chrome-ai.service";
-import { AICapabilities } from "@/types/chrome-ai";
+import { chromeAIService } from "@/features/ai-playground/services/chrome-ai.service";
+import { AICapabilities } from "@/features/ai-playground/types/chrome-ai";
 import {
   isSummarizerSupported,
   isLanguageModelSupported,
   isProofreaderSupported,
   isTranslatorSupported,
   isLanguageDetectorSupported,
-} from "@/types/chrome-ai";
+} from "@/features/ai-playground/types/chrome-ai";
 import {
   Brain,
   Sparkles,

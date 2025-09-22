@@ -1,4 +1,4 @@
-import { ChromeAIPlayground } from "@/components/chrome-ai-playground";
+import { ChromeAIPlayground } from "@/features/ai-playground/components/chrome-ai-playground";
 
 export default function Home() {
   return (
