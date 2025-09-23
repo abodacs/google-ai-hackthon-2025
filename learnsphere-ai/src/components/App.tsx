@@ -6,6 +6,7 @@
  */
 
 import React, { useState, useCallback } from 'react';
+import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { GradeLevel, Interest, UserPreferences } from '@/types/user-preferences';
@@ -275,7 +276,16 @@ export function App() {
         return (
           <Card data-testid="content-input-card">
             <CardHeader>
-              <CardTitle>Welcome to LearnSphere AI</CardTitle>
+              <div className="flex items-center gap-3 mb-2">
+                <Image
+                  src="/logo.svg"
+                  alt="LearnSphere AI Logo"
+                  className="w-10 h-10"
+                  width={40}
+                  height={40}
+                />
+                <CardTitle>Welcome to LearnSphere AI</CardTitle>
+              </div>
               <p className="text-muted-foreground">
                 Transform any text into personalized learning experiences
               </p>

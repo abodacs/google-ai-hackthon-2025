@@ -1,10 +1,8 @@
-<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background Shape with "Dog-Ear" Fold.
-       This path creates the rounded square and the folded corner effect. -->
+<svg width="32" height="32" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Shape with "Dog-Ear" Fold -->
   <path d="M155,0 H45 C20.147,0 0,20.147 0,45 V155 C0,179.853 20.147,200 45,200 H155 C179.853,200 200,179.853 200,155 V45 L155,0 Z M162,38 L162,0 L200,38 H162 Z" fill="#00BFA5"/>
 
-  <!-- The Letter 'L'.
-       Centered, bold, and in a clean, friendly sans-serif font. -->
+  <!-- The Letter 'L' -->
   <text
     x="50%"
     y="51%"

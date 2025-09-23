@@ -47,9 +47,9 @@ function convertDomainMaterialsToStorage(domainMaterials?: GeneratedMaterials): 
   return {
     summary: domainMaterials.summary.text,
     adaptedContent: domainMaterials.adaptedContent.text,
-    mindMap: domainMaterials.mindMap as Record<string, unknown>,
-    audioData: domainMaterials.audioLesson as Record<string, unknown>,
-    quiz: domainMaterials.quiz as Record<string, unknown>
+    mindMap: domainMaterials.mindMap as unknown as Record<string, unknown>,
+    audioData: domainMaterials.audioLesson as unknown as Record<string, unknown>,
+    quiz: domainMaterials.quiz as unknown as Record<string, unknown>
   };
 }
 
@@ -95,8 +95,8 @@ export function useSession(): SessionState & SessionActions {
                 metadata: {
                   createdAt: new Date(fullSession.timestamp),
                   lastModified: new Date(fullSession.timestamp),
-                  source: 'user_input',
-                  complexity: 'moderate'
+                  source: 'user_input' as const,
+                  complexity: 'moderate' as const
                 }
               },
               preferences: fullSession.preferences,
@@ -132,8 +132,8 @@ export function useSession(): SessionState & SessionActions {
               metadata: {
                 createdAt: new Date(),
                 lastModified: new Date(),
-                source: 'user_input',
-                complexity: 'moderate'
+                source: 'user_input' as const,
+                complexity: 'moderate' as const
               }
             },
             preferences: {
@@ -193,8 +193,8 @@ export function useSession(): SessionState & SessionActions {
           metadata: {
             createdAt: new Date(),
             lastModified: new Date(),
-            source: 'user_input',
-            complexity: 'moderate'
+            source: 'user_input' as const,
+            complexity: 'moderate' as const
           }
         },
         preferences,
@@ -335,8 +335,8 @@ export function useSession(): SessionState & SessionActions {
           metadata: {
             createdAt: new Date(session.timestamp),
             lastModified: new Date(session.timestamp),
-            source: 'user_input',
-            complexity: 'moderate'
+            source: 'user_input' as const,
+            complexity: 'moderate' as const
           }
         },
         preferences: session.preferences,
