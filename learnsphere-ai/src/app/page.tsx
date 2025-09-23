@@ -1,9 +1,5 @@
-import { ChromeAIPlayground } from "@/features/ai-playground/components/chrome-ai-playground";
+import { App } from "@/components/App";
 
 export default function Home() {
-  return (
-    <div className="w-full">
-      <ChromeAIPlayground />
-    </div>
-  );
+  return <App />;
 }

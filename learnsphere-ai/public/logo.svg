@@ -1,0 +1,26 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Google Font import for 'Poppins' for accurate rendering -->
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- Background Shape with "Dog-Ear" Fold. 
+       This path creates the rounded square and the folded corner effect. -->
+  <path d="M155,0 H45 C20.147,0 0,20.147 0,45 V155 C0,179.853 20.147,200 45,200 H155 C179.853,200 200,179.853 200,155 V45 L155,0 Z M162,38 L162,0 L200,38 H162 Z" fill="#00BFA5"/>
+
+  <!-- The Letter 'L'. 
+       Centered, bold, and in a clean, friendly sans-serif font. -->
+  <text 
+    x="50%" 
+    y="51%" 
+    dominant-baseline="middle" 
+    text-anchor="middle" 
+    font-family="'Poppins', Arial, sans-serif" 
+    font-size="130" 
+    font-weight="600" 
+    fill="white">
+    L
+  </text>
+</svg>
