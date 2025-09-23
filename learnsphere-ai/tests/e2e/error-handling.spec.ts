@@ -58,7 +58,7 @@ test.describe('Error Handling', () => {
     // Should show helpful instructions
     const instructions = page.locator('[data-testid="setup-instructions"]');
     if (await instructions.isVisible()) {
-      await expect(instructions).toContainText(/chrome://flags|enable|setup/i);
+      await expect(instructions).toContainText(/chrome:\/\/flags|enable|setup/i);
     }
   });
 

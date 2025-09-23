@@ -91,7 +91,8 @@ test.describe('Text Processing Flow', () => {
 
     // Verify quiz has questions
     const quizQuestions = page.locator('[data-testid="quiz-question"]');
-    await expect(quizQuestions).toHaveCount(expect.any(Number));
+    const questionCount = await quizQuestions.count();
+    expect(questionCount).toBeGreaterThan(0);
     await expect(quizQuestions.first()).toBeVisible();
   });
 
