@@ -1,0 +1,18 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "🔍 Running pre-push checks..."
+
+# Type checking
+echo "📝 Running TypeScript type check..."
+pnpm type-check
+
+# Linting
+echo "🔧 Running ESLint..."
+pnpm lint
+
+# Build verification
+echo "🏗️ Running production build..."
+pnpm build
+
+echo "✅ All pre-push checks passed!"
