@@ -3,38 +3,39 @@
  * Tests the Chrome AI service wrapper and its integration with browser APIs
  */
 
+import { describe, test, expect, beforeEach, afterEach, vi } from 'vitest'
 import { ChromeAIService } from '@/features/ai-playground/services/chrome-ai.service';
 import { AIErrorCode } from '@/features/ai-playground/types/chrome-ai';
 
 // Mock Chrome AI APIs for testing
 const mockSummarizer = {
-  summarize: jest.fn().mockResolvedValue('This is a test summary.'),
-  destroy: jest.fn()
+  summarize: vi.fn().mockResolvedValue('This is a test summary.'),
+  destroy: vi.fn()
 };
 
 const mockRewriter = {
-  rewrite: jest.fn().mockResolvedValue('This is rewritten content.'),
-  destroy: jest.fn()
+  rewrite: vi.fn().mockResolvedValue('This is rewritten content.'),
+  destroy: vi.fn()
 };
 
 const mockWriter = {
-  write: jest.fn().mockResolvedValue('This is generated content.'),
-  destroy: jest.fn()
+  write: vi.fn().mockResolvedValue('This is generated content.'),
+  destroy: vi.fn()
 };
 
 const mockSummarizerAPI = {
-  availability: jest.fn().mockResolvedValue('readily'),
-  create: jest.fn().mockResolvedValue(mockSummarizer)
+  availability: vi.fn().mockResolvedValue('readily'),
+  create: vi.fn().mockResolvedValue(mockSummarizer)
 };
 
 const mockRewriterAPI = {
-  availability: jest.fn().mockResolvedValue('readily'),
-  create: jest.fn().mockResolvedValue(mockRewriter)
+  availability: vi.fn().mockResolvedValue('readily'),
+  create: vi.fn().mockResolvedValue(mockRewriter)
 };
 
 const mockWriterAPI = {
-  availability: jest.fn().mockResolvedValue('readily'),
-  create: jest.fn().mockResolvedValue(mockWriter)
+  availability: vi.fn().mockResolvedValue('readily'),
+  create: vi.fn().mockResolvedValue(mockWriter)
 };
 
 describe('Chrome AI Service Integration', () => {
@@ -42,16 +43,16 @@ describe('Chrome AI Service Integration', () => {
 
   beforeEach(() => {
     // Reset mocks
-    jest.clearAllMocks();
+    vi.clearAllMocks();
 
     // Mock Chrome AI globals
     (globalThis as any).Summarizer = mockSummarizerAPI;
     (globalThis as any).Rewriter = mockRewriterAPI;
     (globalThis as any).Writer = mockWriterAPI;
-    (globalThis as any).LanguageModel = { availability: jest.fn().mockResolvedValue('readily') };
-    (globalThis as any).Proofreader = { availability: jest.fn().mockResolvedValue('readily') };
-    (globalThis as any).Translator = { availability: jest.fn().mockResolvedValue('readily') };
-    (globalThis as any).LanguageDetector = { availability: jest.fn().mockResolvedValue('readily') };
+    (globalThis as any).LanguageModel = { availability: vi.fn().mockResolvedValue('readily') };
+    (globalThis as any).Proofreader = { availability: vi.fn().mockResolvedValue('readily') };
+    (globalThis as any).Translator = { availability: vi.fn().mockResolvedValue('readily') };
+    (globalThis as any).LanguageDetector = { availability: vi.fn().mockResolvedValue('readily') };
 
     // Mock window object
     Object.defineProperty(global, 'window', {
