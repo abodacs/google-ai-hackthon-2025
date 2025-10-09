@@ -9,7 +9,7 @@ const TEST_CONTENT = `Machine learning is a subset of artificial intelligence th
 
 test.describe('Learning Dashboard Display', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/');
+    await page.goto('/v0');
     await page.waitForLoadState('networkidle');
 
     // Set up a completed session for dashboard testing

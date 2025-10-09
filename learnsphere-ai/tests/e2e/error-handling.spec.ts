@@ -7,7 +7,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Error Handling', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/');
+    await page.goto('/v0');
     await page.waitForLoadState('networkidle');
   });
 

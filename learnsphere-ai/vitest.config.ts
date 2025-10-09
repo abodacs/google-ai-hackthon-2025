@@ -6,9 +6,9 @@ import path from 'path'
 export default defineConfig({
   plugins: [react()],
 
-  // Avoid PostCSS issues during testing
-  build: {
-    cssCodeSplit: false
+  // Disable PostCSS for tests
+  css: {
+    postcss: false
   },
   test: {
     // Test environment
@@ -73,10 +73,8 @@ export default defineConfig({
     // Reporters
     reporters: ['default', 'verbose'],
 
-    // Watch mode
-    watch: {
-      include: ['src/**/*', 'tests/**/*']
-    }
+    // Watch configuration
+    watch: true
   },
 
   // Path resolution (same as Next.js)
@@ -89,12 +87,5 @@ export default defineConfig({
   // Define for environment variables
   define: {
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'test')
-  },
-
-  // Minimal CSS processing for tests to avoid PostCSS conflicts
-  css: {
-    modules: {
-      classNameStrategy: 'non-scoped'
-    }
   }
 })

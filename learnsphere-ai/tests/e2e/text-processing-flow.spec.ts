@@ -10,7 +10,7 @@ const TEST_CONTENT = `Photosynthesis is the process by which plants convert sunl
 test.describe('Text Processing Flow', () => {
   test.beforeEach(async ({ page }) => {
     // Navigate to the application
-    await page.goto('/');
+    await page.goto('/v0');
 
     // Wait for the application to load
     await page.waitForLoadState('networkidle');

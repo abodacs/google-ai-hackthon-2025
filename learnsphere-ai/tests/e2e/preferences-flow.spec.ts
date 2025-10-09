@@ -14,7 +14,7 @@ const INTERESTS = [
 
 test.describe('Preferences Flow', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/');
+    await page.goto('/v0');
     await page.waitForLoadState('networkidle');
   });
 
@@ -159,7 +159,7 @@ test.describe('Preferences Flow', () => {
     await page.locator('[data-testid="interest-selector"]').selectOption('gaming');
 
     // Navigate away and back (simulate user behavior)
-    await page.goto('/about'); // Assuming an about page exists, or modify as needed
+    await page.goto('/'); // Go to landing page
     await page.goBack();
 
     // Verify preferences are maintained (if localStorage is used)

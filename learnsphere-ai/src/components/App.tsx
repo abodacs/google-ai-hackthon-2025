@@ -49,7 +49,24 @@ export function App() {
       }
     };
 
+    // Check for content from landing page
+    const checkStoredContent = () => {
+      if (typeof window !== 'undefined') {
+        const storedContent = sessionStorage.getItem('learningContent');
+        if (storedContent && storedContent.trim().length >= 50) {
+          setState(prev => ({
+            ...prev,
+            content: storedContent,
+            currentStep: 'preferences'
+          }));
+          // Clear the stored content
+          sessionStorage.removeItem('learningContent');
+        }
+      }
+    };
+
     checkSupport();
+    checkStoredContent();
   }, []);
 
   const handleContentInput = useCallback((content: string) => {
